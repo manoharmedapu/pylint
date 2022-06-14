@@ -1,0 +1,6 @@
+stage ('Static code analysis') {
+    sh 'pip install pylint'
+    sh 'pylint --generate-rcfile > .pylintrc'
+    sh 'pylint -f parseable --reports=no*> pylint.log'
+    sh 'cat pylint.log'
+                                }
